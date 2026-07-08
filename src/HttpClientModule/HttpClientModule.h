@@ -13,5 +13,5 @@ class HttpClientModule {
         ~HttpClientModule();
 
         // 位置情報と温度情報を外部サーバにPOSTする
-        void postTelemetry(Telemetry telemetry);
+        void postTelemetry(Telemetry& telemetry);
 };

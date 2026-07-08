@@ -24,7 +24,7 @@ GpsModule gpsModule = GpsModule(gpsSerial);
 
 // 定周期処理用のタイマー
 unsigned long lastSendTime = 0;
-const unsigned long sendInterval = 30000; // 30秒
+const unsigned long sendInterval = 10000; // 10秒
 
 
 void setup() {
@@ -43,15 +43,15 @@ void setup() {
 }
 
 void loop() {
-  Telemetry telemetry = gpsModule.fetchGPSData();
-
   // 定周期でテレメトリを送信
   if (millis() - lastSendTime < sendInterval) {
     return;
   }
   lastSendTime = millis();
 
-  telemetry.timestamp = millis() / 1000; // モックデータ。本当はGPSから本物の時間（UnixTime）を取得する。
+  Telemetry telemetry;
+  gpsModule.fetchGPSData(telemetry);
+
   telemetry.temperature = 12.3; // モックデータ(温度センサ)
 
   Serial.println("\n💡 [Timer Trigger] Start sending telemetry process ...");

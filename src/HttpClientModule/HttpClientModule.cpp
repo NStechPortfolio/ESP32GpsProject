@@ -9,7 +9,7 @@ HttpClientModule::HttpClientModule(const char* url, const char* satelliteId) {
 
 HttpClientModule::~HttpClientModule() {}
 
-void HttpClientModule::postTelemetry(Telemetry telemetry) {
+void HttpClientModule::postTelemetry(Telemetry& telemetry) {
     if (WiFi.status() != WL_CONNECTED) {
         Serial.println("[HTTP] Skip to post request. (Wifi connection failed.)");
         return;
