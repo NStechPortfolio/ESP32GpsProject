@@ -10,7 +10,7 @@
 | **GT-502MGG-N** | GPS/GNSSモジュール(「みちびき」2機(194/195)対応、高感度) | YIC |
 | **ADT7410** | 高精度・高分解能 I2C温度センサ(±0.5°C精度) | Analog Devices |
 
-![全体図](img/overview.png)
+![全体図](img/overview.jpg)
 
 ---
 
