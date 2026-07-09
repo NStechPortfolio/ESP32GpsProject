@@ -26,7 +26,7 @@ bool WifiModule::connect() {
         Serial.print(".");
 
         // ウォッチドッグ
-        if (millis() - startTime > connectionTimeout) {
+        if (millis() - startTime > CONNECTION_TIMEOUT) {
             Serial.println("\n[error] Wifi connection timeout.");
             return false;
         }
